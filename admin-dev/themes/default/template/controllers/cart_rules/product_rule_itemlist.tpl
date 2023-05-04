@@ -25,7 +25,7 @@
 <div class="col-lg-12 bootstrap">
 	<div class="col-lg-6">
 		{l s='Unselected' d='Admin.Global'}
-    <input type="text" id="search_unselected" placeholder="{l s='Search' d='Admin.Actions'}">
+    <input type="text" id="search_unselected_{$product_rule_group_id|intval}_{$product_rule_id|intval}_1" placeholder="{l s='Search' d='Admin.labels'}">
 		<select multiple size="20" id="product_rule_select_{$product_rule_group_id|intval}_{$product_rule_id|intval}_1">
 			{foreach from=$product_rule_itemlist.unselected item='item'}
 				<option value="{$item.id|intval}" title="{$item.name|escape:'html':'UTF-8'}">&nbsp;{$item.name|escape:'html':'UTF-8'}</option>
@@ -59,7 +59,7 @@
 </script>
 <script>
  
-	var input = document.getElementById("search_unselected");
+	var input = document.getElementById("search_unselected_{$product_rule_group_id|intval}_{$product_rule_id|intval}_1");
 	var select = document.getElementById("product_rule_select_{$product_rule_group_id|intval}_{$product_rule_id|intval}_1");
 	input.addEventListener("input", function() {
  
